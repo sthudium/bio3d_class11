@@ -7,20 +7,25 @@ output: github_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+Begin by loading the bio3d package.
 
 ```{r, echo = FALSE}
 library(bio3d)
 ```
 
+Save a vector of pdb protein codes that you want to investigate.
 ```{r, echo=FALSE, warning=FALSE, message = FALSE}
 ids <- c("1TND_B","1AGR_A","1TAG_A","1GG2_A","1KJY_A","4G5Q_A")  
 
+```
+
+Using the **get.pdb()** function we can access the protein data.  By setting 
+```{r, warning = FALSE,results='hide'}
 files <- get.pdb(ids, split = TRUE)
 
 pdbs <- pdbaln(files, fit = TRUE)
 
 ```
-
 
 ```{r}
 print(pdbs)

@@ -1,41 +1,17 @@
 Class 11 Bio3d
 ================
 
-    ## 
-      |                                                                       
-      |                                                                 |   0%
-      |                                                                       
-      |===========                                                      |  17%
-      |                                                                       
-      |======================                                           |  33%
-      |                                                                       
-      |================================                                 |  50%
-      |                                                                       
-      |===========================================                      |  67%
-      |                                                                       
-      |======================================================           |  83%
-      |                                                                       
-      |=================================================================| 100%
+Begin by loading the bio3d package.
 
-    ## Reading PDB files:
-    ## ./split_chain/1TND_B.pdb
-    ## ./split_chain/1AGR_A.pdb
-    ## ./split_chain/1TAG_A.pdb
-    ## ./split_chain/1GG2_A.pdb
-    ## ./split_chain/1KJY_A.pdb
-    ## ./split_chain/4G5Q_A.pdb
-    ## .....   PDB has ALT records, taking A only, rm.alt=TRUE
-    ## .
-    ## 
-    ## Extracting sequences
-    ## 
-    ## pdb/seq: 1   name: ./split_chain/1TND_B.pdb 
-    ## pdb/seq: 2   name: ./split_chain/1AGR_A.pdb 
-    ## pdb/seq: 3   name: ./split_chain/1TAG_A.pdb 
-    ## pdb/seq: 4   name: ./split_chain/1GG2_A.pdb 
-    ## pdb/seq: 5   name: ./split_chain/1KJY_A.pdb 
-    ## pdb/seq: 6   name: ./split_chain/4G5Q_A.pdb 
-    ##    PDB has ALT records, taking A only, rm.alt=TRUE
+Save a vector of pdb protein codes that you want to investigate.
+
+Using the **get.pdb()** function we can access the protein data. By setting
+
+``` r
+files <- get.pdb(ids, split = TRUE)
+
+pdbs <- pdbaln(files, fit = TRUE)
+```
 
 ``` r
 print(pdbs)
